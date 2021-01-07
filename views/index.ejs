@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <button onclick="getTest()">点击test</button>
+    <script src="javascripts/jquery.min.js"></script>
+    <script>
+      function getTest() {
+        $.get("http://localhost:3000/test", {"id": 2}, function (data) {
+          console.log(data);
+        }, "json")
+      }
+    </script>
+  </body>
+</html>
